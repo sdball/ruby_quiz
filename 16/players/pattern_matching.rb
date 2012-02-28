@@ -6,7 +6,6 @@ class PatternMatching < Player
   }
   def initialize(opponent)
     @first_game = true
-    @my_move = :rock
     @patterns = {
       rock: {},
       paper: {},
@@ -15,7 +14,7 @@ class PatternMatching < Player
   end
 
   def choose
-    @my_move
+    @my_move || :rock
   end
 
   def result(mine, theirs, outcome)
