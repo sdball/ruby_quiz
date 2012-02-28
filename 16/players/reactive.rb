@@ -5,12 +5,8 @@ class Reactive < Player
     scissors: :rock
   }
 
-  def initialize(opponent)
-    @my_move = :paper
-  end
-
   def choose
-    @my_move
+    @my_move || :paper
   end
 
   def result(my_move, opponent_move, outcome)
